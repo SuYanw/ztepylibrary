@@ -50,6 +50,7 @@ setOnuBridge(chassi, board, pon, onuid, port vlan) # Set onu Bridge Mode
 
 
 ## Testing
+Already tested on this software in procution cases:
 ```
 OLT ZTE C610, Ver: ZTE ZXA10 Software, Version: V1.2.1, Release software
 OLT ZTE C650, Ver: ZTE ZXA10 Software, Version: V1.2.2, Release software
