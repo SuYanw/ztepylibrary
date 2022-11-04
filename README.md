@@ -55,3 +55,10 @@ Already tested on this software in procution cases:
 OLT ZTE C610, Ver: ZTE ZXA10 Software, Version: V1.2.1, Release software
 OLT ZTE C650, Ver: ZTE ZXA10 Software, Version: V1.2.2, Release software
 ```
+
+## Internal Adjustmments
+``` python
+DEFAULT_MAX_SSH_RECV    = 99999999  # Max recevied for ssh conn 
+DEFAULT_SLEEP_COMMAND   = 0.5  # default sleep command for recevied response
+DEFAULT_MAX_ONU_PER_PON = 256 # max pon per board on olt
+```
