@@ -1,4 +1,3 @@
-from distutils.filelist import findall
 import os
 import re
 import time
@@ -6,24 +5,11 @@ import paramiko as paramiko
 from paramiko import AutoAddPolicy
 import unidecode
 
-from classes.logs import LOG
-from classes.code import CODE
-
 
 
 DEFAULT_MAX_SSH_RECV    = 99999999
 DEFAULT_SLEEP_COMMAND   = 0.5 
 DEFAULT_MAX_ONU_PER_PON = 256
-
-def clearstr(s): # Triptych
-    
-    # Remove all non-word characters (everything except numbers and letters)
-    #s = re.sub(r"[^\w\s]", '', s)
-
-    # Replace all runs of whitespace with a single dash
-    s = re.sub(r"\s+", '-', s)
-
-    return s
 
 
 class ZTE:
