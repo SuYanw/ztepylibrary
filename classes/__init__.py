@@ -502,3 +502,23 @@ class ZTE:
             return True
         else:
             return False
+
+
+
+    
+    '''
+        @doc: isZTE
+        @description: Check if onu is Zte manufacturer
+        @input_params: Serial number (only string are allowed)
+        @output_type: bool
+        @output_params: True if is ZTE or False if not
+    ''' 
+    @staticmethod
+    def isZTE(sn):
+        if not (type(sn) == str):
+            return None
+
+        if(re.search("ZTE", sn) is not None):
+            return True
+        else:
+            return False
