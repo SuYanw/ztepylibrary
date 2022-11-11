@@ -46,6 +46,7 @@ setOnuBridgeVport(chassi, board, pon, uid, vport) # set onu Bridge vport
 setOnuiPoE(chassi, board, pon, onuid, vlan) # Set onu iPoE Mode
 setOnuBridge(chassi, board, pon, onuid, port vlan) # Set onu Bridge Mode
 isZTE(serialnumber) #check if onu is zte model
+getOnuSignal(chassi, board, pon, onuid) #get ont signal
 ```
 
 

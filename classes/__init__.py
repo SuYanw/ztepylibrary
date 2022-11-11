@@ -505,6 +505,35 @@ class ZTE:
 
 
 
+            
+    '''
+        @doc: getOnuSignal
+        @description: Set onu Bridge Mode
+        @input_params: Chassi, Board, Pon, Onuid, vlan, service(op, def is 1)
+        @output_type: bool
+        @output_params: True if successful applyed.
+    ''' 
+    def getOnuSignal(self, chassi, board, pon, onuid):
+        if not (self.__connected):
+            return False
+
+
+        self.Bash.send(f"show pon power olt-rx gpon_olt-{chassi}/{board}/{pon}\n")
+        time.sleep(DEFAULT_SLEEP_COMMAND + 2.0)
+
+        __rtn_string = self.Bash.recv(DEFAULT_MAX_SSH_RECV).splitlines(True)
+        
+        for __line in __rtn_string:
+            __onu = str(__line.decode('utf-8'))
+
+            if('gpon_onu' in __onu):
+                if(re.findall("(?<=:)[0-9]{1,3}", __onu)[0] == onuid):
+                    return re.findall("-[0-9]{1,2}[.][0-9]{1,2}", __onu)[0]
+
+        return None
+        
+
+
     
     '''
         @doc: isZTE
